@@ -84,7 +84,7 @@ fi
 
 ## NOTES
 
-options=("Nginx-Splash" "Keycloak" "Nextcloud" "Jellyfin" "Wordpress" "Payment and User Management")
+options=("Nginx-Splash" "Keycloak" "Nextcloud" "Jellyfin" "Wordpress" "Payment and User Management" "AzuraCast")
 entrypoint=web
 echo
 menu() {
@@ -375,6 +375,13 @@ docker network create --attachable -d bridge inethi-bridge-traefik
     echo "Done"
 }
 
+[[ "${choices[6]}" ]] && {
+    printf "Building azuracast docker ... "
+
+    cd ./azuracast
+    ./local_build.sh
+    cd ..
+}
 
 # Install DNS system last - TODO add a check to see if it works otherwise reverse changes
 [ "$installDNS" = 1 ] && {
