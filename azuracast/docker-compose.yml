@@ -25,7 +25,7 @@ services:
             - 'backups:/var/azuracast/backups'
             - 'acme:/var/azuracast/acme'
             - 'db_data:/var/lib/mysql'
-        restart: unless-stopped
+        restart: always
         ulimits:
             nofile:
                 soft: 65536
@@ -44,12 +44,12 @@ services:
                 max-size: 1m
                 max-file: '5'
 volumes:
-    db_data: {  }
-    acme: {  }
-    shoutcast2_install: {  }
-    stereo_tool_install: {  }
-    geolite_install: {  }
-    sftpgo_data: {  }
-    station_data: {  }
-    www_uploads: {  }
-    backups: {  }
+    db_data: {}
+    acme: {}
+    shoutcast2_install: {}
+    stereo_tool_install: {}
+    geolite_install: {}
+    sftpgo_data: {}
+    station_data: {}
+    www_uploads: {}
+    backups: {}
