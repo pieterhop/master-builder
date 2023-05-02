@@ -376,7 +376,6 @@ docker network create --attachable -d bridge inethi-bridge-traefik
 }
 
 
-
 # Install DNS system last - TODO add a check to see if it works otherwise reverse changes
 [ "$installDNS" = 1 ] && {
     printf "Building iNethi DNS ... "
