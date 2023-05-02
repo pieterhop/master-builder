@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.azuracast.rule=Host(`radio.inethilocal.net`)"
+      - "traefik.http.routers.azuracast.entrypoints=websecure"
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: "inethi-bridge-traefik"
